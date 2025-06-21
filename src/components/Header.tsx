@@ -1,4 +1,3 @@
-import FoodTabs from "@/components/FoodTabs";
 import { Star, Clock, Users } from "lucide-react";
 import { TypingText } from "@/components/animate-ui/text/typing";
 
@@ -34,7 +33,6 @@ export default function Header() {
                     </div>
                 </div>
             </header>
-            <FoodTabs />
         </>
     );
 }
