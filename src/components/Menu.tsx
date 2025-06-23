@@ -31,7 +31,7 @@ export default function Menu() {
                     <TabsContent key={category.id} value={category.id}>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
                             {category.items.map((item) => (
-                                <Card key={item.id} className='overflow-hidden'>
+                                <Card key={item.id} className='overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white'>
                                     <div className='relative'>
                                         <img src={item.image} alt={item.name} className='w-full h-48 object-cover' />
                                         {item.popular && (
