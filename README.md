@@ -1,48 +1,44 @@
-# Astro Starter Kit: Basics
+# 🧾 SmartOrder Menu
 
-```sh
-npm create astro@latest -- --template basics
-```
+¡Bienvenido a **SmartOrder Menu**!  
+Una moderna interfaz web para visualizar un **menú digital responsivo**. Este proyecto ofrece una experiencia visual agradable y adaptativa para mostrar platos típicos con sus ingredientes, tiempos estimados y etiquetas destacadas. Ideal para restaurantes que desean presentar su menú de forma interactiva y profesional.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🌟 ¿Qué es SmartOrder Menu?
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+**SmartOrder Menu** es una interfaz de catálogo gastronómico digital. Este menú digital:
 
-## 🚀 Project Structure
+- 📱 Se adapta perfectamente a **dispositivos móviles, tablets y escritorios**.
+- 🍽️ Muestra **platos tradicionales colombianos** clasificados por categorías.
+- ⏱️ Incluye tiempos de preparación estimados.
+- 🔖 Etiqueta los productos populares con un distintivo visual.
+- 📸 Acompaña cada plato con su respectiva imagen, descripción e ingredientes.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🖼️ Capturas de pantalla
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+<div style="display: flex; gap: 24px; width:100%; heigth:400px;">
+  <img src="https://i.postimg.cc/6pXdpWmP/web-responside-md.png" alt="SmartOrder Menu Tablet" width="50%" heigth="50%" style="margin-right: 100px;">
+  <img src="https://i.postimg.cc/YS2YQXkf/web-responsive.png" alt="SmartOrder Menu Mobile" >
+</div>
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-## 🧞 Commands
+## 🚀 Cómo clonar y ejecutar el proyecto localmente
 
-All commands are run from the root of the project, from a terminal:
+Sigue estos pasos para ver el proyecto en tu máquina:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+# 1. Clona el repositorio
+git clone https://github.com/SdQL/SmartOrder-menu.git
 
-## 👀 Want to learn more?
+# 2. Entra en el directorio
+cd SmartOrder-menu
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# 3. Instala las dependencias
+npm install
+
+# 4. Ejecuta el servidor de desarrollo
+npm run dev
+
+# 5. Abre en tu navegador
+# Usualmente: http://localhost:4321
