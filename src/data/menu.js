@@ -1,4 +1,4 @@
-[
+const DATA = [
   {
     "id": "fast-food",
     "name": "Comidas Rápidas",
@@ -204,3 +204,5 @@
     ]
   }
 ]
+
+export default DATA;
