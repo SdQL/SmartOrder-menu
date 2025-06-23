@@ -1,56 +1,5 @@
 const DATA = [
   {
-    "id": "fast-food",
-    "name": "Comidas Rápidas",
-    "items": [
-      {
-        "id": 1,
-        "name": "Arepa Rellena",
-        "description": "Arepa de maíz rellena con carne desmechada, queso y aguacate",
-        "price": 12000,
-        "image": "https://i.postimg.cc/Wzv9y5gS/dd2b73b8-7420-4e42-9107-e5045d0ffb94.png",
-        "popular": true,
-        "prepTime": "8-10 min"
-      },
-      {
-        "id": 2,
-        "name": "Empanadas Colombianas",
-        "description": "Empanadas crujientes rellenas de carne molida y papa",
-        "price": 7000,
-        "image": "https://www.campi.com.co/wp-content/uploads/2020/08/empanadas-colombianas-imagen-destacada.jpg",
-        "popular": true,
-        "prepTime": "5-7 min"
-      },
-      {
-        "id": 3,
-        "name": "Arepa de Huevo",
-        "description": "Arepa frita con huevo entero en su interior",
-        "price": 8000,
-        "image": "https://chokliarepas.com/wp-content/uploads/2024/01/0631828474525674cae737cbe9df156b.jpg",
-        "popular": false,
-        "prepTime": "6-8 min"
-      },
-      {
-        "id": 4,
-        "name": "Aborrajado",
-        "description": "Plátano maduro relleno de queso, rebozado y frito",
-        "price": 9000,
-        "image": "https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/TW4ZVQ5JPZGBLC7ZUUX5PHMA64.jpg",
-        "popular": false,
-        "prepTime": "5-7 min"
-      },
-      {
-        "id": 5,
-        "name": "Pandebono con Bocadillo",
-        "description": "Panecillo de queso y yuca acompañado de bocadillo",
-        "price": 9000,
-        "image": "https://pbs.twimg.com/media/EYjbIaxXYAAw7CS.jpg",
-        "popular": true,
-        "prepTime": "4-6 min"
-      }
-    ]
-  },
-  {
     "id": "main-course",
     "name": "Platos Fuertes",
     "items": [
@@ -98,6 +47,57 @@ const DATA = [
         "image": "https://i.pinimg.com/474x/e7/b9/5e/e7b95e89e570ed0625d07632ef294b35.jpg",
         "popular": false,
         "prepTime": "12-15 min"
+      }
+    ]
+  },
+  {
+    "id": "entries",
+    "name": "Entradas",
+    "items": [
+      {
+        "id": 1,
+        "name": "Arepa Rellena",
+        "description": "Arepa de maíz rellena con carne desmechada, queso y aguacate",
+        "price": 12000,
+        "image": "https://i.postimg.cc/Wzv9y5gS/dd2b73b8-7420-4e42-9107-e5045d0ffb94.png",
+        "popular": true,
+        "prepTime": "8-10 min"
+      },
+      {
+        "id": 2,
+        "name": "Empanadas con ají",
+        "description": "Empanadas crujientes rellenas de carne molida y papa",
+        "price": 7000,
+        "image": "https://www.campi.com.co/wp-content/uploads/2020/08/empanadas-colombianas-imagen-destacada.jpg",
+        "popular": true,
+        "prepTime": "5-7 min"
+      },
+      {
+        "id": 3,
+        "name": "Arepa de Huevo",
+        "description": "Arepa frita con huevo entero en su interior",
+        "price": 8000,
+        "image": "https://chokliarepas.com/wp-content/uploads/2024/01/0631828474525674cae737cbe9df156b.jpg",
+        "popular": false,
+        "prepTime": "6-8 min"
+      },
+      {
+        "id": 4,
+        "name": "Aborrajado",
+        "description": "Plátano maduro relleno de queso, rebozado y frito",
+        "price": 9000,
+        "image": "https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/TW4ZVQ5JPZGBLC7ZUUX5PHMA64.jpg",
+        "popular": false,
+        "prepTime": "5-7 min"
+      },
+      {
+        "id": 5,
+        "name": "Pandebono con Bocadillo",
+        "description": "Panecillo de queso y yuca acompañado de bocadillo",
+        "price": 9000,
+        "image": "https://pbs.twimg.com/media/EYjbIaxXYAAw7CS.jpg",
+        "popular": true,
+        "prepTime": "4-6 min"
       }
     ]
   },
@@ -188,7 +188,7 @@ const DATA = [
         "name": "Buñuelos",
         "description": "Bolas de masa de queso fritas, crujientes por fuera",
         "price": 6000,
-        "image": "https://www.elespectador.com/resizer/v2/DLEQPHYNTZFGVEPDJ2VQDANSDI.jpg",
+        "image": "https://i0.wp.com/www.pasionthermomix.co/wp-content/uploads/2019/11/bunuelos.jpg?fit=768%2C480&ssl=1",
         "popular": true,
         "prepTime": "3-5 min"
       },
