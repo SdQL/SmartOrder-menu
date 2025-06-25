@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import data from "../data/menu.js";
 import { Flame, Clock } from "lucide-react";
+import CallWaiter from "./CallWaiter.js";
 
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState("main-course");
@@ -72,6 +73,7 @@ export default function Menu() {
           </TabsContent>
         ))}
       </Tabs>
+      <CallWaiter/>
     </main>
   );
 }
