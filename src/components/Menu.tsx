@@ -12,7 +12,6 @@ import { Flame, Clock } from "lucide-react";
 
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState("main-course");
-  console.log(activeCategory);
 
   return (
     <main className="container mx-auto px-4 py-8">
