@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -7,12 +7,38 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import data from "../data/menu.js";
+import {getData} from "../data/menu.js";
 import { Flame, Clock } from "lucide-react";
 import CallWaiter from "./CallWaiter.js";
 
+type MenuItem = {
+  id: string;
+  name: string;
+  image: string;
+  price: number;
+  description: string;
+  prepTime: string;
+  popular?: boolean;
+};
+
+type Category = {
+  id: string;
+  name: string;
+  items: MenuItem[];
+};
+
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState("main-course");
+  const [data, setData] = useState<Category[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchData = await getData();
+      setData(fetchData);
+    }
+    fetchData();
+  }, []);
+
 
   return (
     <main className="container mx-auto px-4 py-8">
@@ -26,7 +52,7 @@ export default function Menu() {
             <TabsTrigger
               value={category.id}
               key={category.id}
-              className="data-[state=active]:border-b-amber-400 data-[state=active]:bg-transparent cursor-pointer"
+              className="data-[state=active]:border-b-orange-400 data-[state=active]:bg-transparent cursor-pointer hover:scale-105"
             >
               {category.name}
             </TabsTrigger>
