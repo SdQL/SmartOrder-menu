@@ -19,7 +19,7 @@ const CallWaiter = () => {
 
     setTimeout(() => {
       setIsDisabled(false);
-    }, 600000)
+    }, 200000) // 
   };
 
   return (
