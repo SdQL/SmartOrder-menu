@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { BellRing } from "lucide-react";
+import { LoaderCircle } from 'lucide-react';
 import Countdown from "react-countdown";
 import Swal from "sweetalert2";
 
@@ -8,7 +9,13 @@ const CallWaiter = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [expiryTime, setExpiryTime] = useState<Date | null>(null);
 
-  const renderer = ({ minutes, seconds }: { minutes: number; seconds: number; }) => {
+  const renderer = ({
+    minutes,
+    seconds,
+  }: {
+    minutes: number;
+    seconds: number;
+  }) => {
     return (
       <span>
         {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
@@ -38,7 +45,12 @@ const CallWaiter = () => {
           : "bg-amber-500 hover:bg-amber-400 cursor-pointer"
       }`}
     >
-      <BellRing className={isDisabled ? "opacity-50" : "bell"} />
+      {!isDisabled ? (
+        <BellRing className={isDisabled ? "opacity-50" : "bell"} />
+      ) : (
+        <LoaderCircle className={isDisabled && "opacity-50 animate-spin"} />
+      )}
+
       <Button
         onClick={handleModal}
         disabled={isDisabled}
@@ -47,7 +59,6 @@ const CallWaiter = () => {
       >
         {!isDisabled ? (
           "Listo para ordenar"
-          
         ) : expiryTime ? (
           <Countdown
             date={expiryTime}
