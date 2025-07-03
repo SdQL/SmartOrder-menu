@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { BellRing } from "lucide-react";
-import { LoaderCircle } from 'lucide-react';
+import { LoaderCircle } from "lucide-react";
 import Countdown from "react-countdown";
 import Swal from "sweetalert2";
 
 const CallWaiter = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [expiryTime, setExpiryTime] = useState<Date | null>(null);
+  const [hasCalledBefore, setHasCalledBefore] = useState(false);
+
+  useEffect(() => {
+    const wasCalled = localStorage.getItem("hasCalledWaiter");
+    if (wasCalled === "true") {
+      setHasCalledBefore(true);
+    }
+  }, []);
 
   const renderer = ({
     minutes,
@@ -27,6 +35,9 @@ const CallWaiter = () => {
     const time = new Date(Date.now() + 4 * 60 * 1000); // 4 minutos
     setIsDisabled(true);
     setExpiryTime(time);
+
+    localStorage.setItem("hasCalledWaiter", "true");
+    setHasCalledBefore(true);
 
     Swal.fire({
       icon: "success",
@@ -58,7 +69,7 @@ const CallWaiter = () => {
         className="text-[16px] font-semibold hover:bg-transparent"
       >
         {!isDisabled ? (
-          "Listo para ordenar"
+          !hasCalledBefore ? "Listo para ordenar" : 'Llamar al mesero'
         ) : expiryTime ? (
           <Countdown
             date={expiryTime}
