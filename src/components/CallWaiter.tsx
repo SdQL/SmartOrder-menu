@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useSearchParams } from "react-router-dom";
 import { BellRing } from "lucide-react";
 import { LoaderCircle } from "lucide-react";
 import Countdown from "react-countdown";
@@ -9,6 +10,7 @@ const CallWaiter = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [expiryTime, setExpiryTime] = useState<Date | null>(null);
   const [hasCalledBefore, setHasCalledBefore] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     const wasCalled = localStorage.getItem("hasCalledWaiter");
@@ -31,7 +33,27 @@ const CallWaiter = () => {
     );
   };
 
+  const callWaiter = () => {
+    const tableParam = searchParams.get("mesa");
+    const table = tableParam ? parseInt(tableParam) : null;
+    let postBody;
+
+    if (hasCalledBefore) {
+      postBody = {
+        tableNumber: table,
+        action: "call-waiter",
+      };
+    } else {
+      postBody = {
+        tableParam: table,
+        action: "make-order",
+      };
+    }
+  };
+
   const handleModal = () => {
+    callWaiter();
+
     const time = new Date(Date.now() + 4 * 60 * 1000); // 4 minutos
     setIsDisabled(true);
     setExpiryTime(time);
@@ -69,7 +91,11 @@ const CallWaiter = () => {
         className="text-[16px] font-semibold hover:bg-transparent"
       >
         {!isDisabled ? (
-          !hasCalledBefore ? "Listo para ordenar" : 'Llamar al mesero'
+          !hasCalledBefore ? (
+            "Listo para ordenar"
+          ) : (
+            "Llamar al mesero"
+          )
         ) : expiryTime ? (
           <Countdown
             date={expiryTime}
