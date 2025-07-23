@@ -33,26 +33,51 @@ const CallWaiter = () => {
     );
   };
 
-  const callWaiter = () => {
+  const callWaiter = async () => {
     const tableParam = searchParams.get("mesa");
     const table = tableParam ? parseInt(tableParam) : null;
     let postBody;
 
     if (hasCalledBefore) {
       postBody = {
-        tableNumber: table,
-        action: "call-waiter",
+        "tableNumber": table,
+        "action": "call-waiter",
       };
     } else {
       postBody = {
-        tableParam: table,
-        action: "make-order",
+        "tableNumber": table,
+        "action": "make-order",
       };
+    }
+
+    try {
+      const response = await fetch("http://localhost:3000/menu/call-waiter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postBody),
+      });
+
+      console.log("Response:", response);
+      const data = await response.json()
+      console.log(data)
+
+      if (!response.ok) {
+        throw new Error("Error al llamar al mesero");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No se pudo llamar al mesero. Inténtalo de nuevo más tarde.",
+      });
     }
   };
 
-  const handleModal = () => {
-    callWaiter();
+  const handleModal = async () => {
+    await callWaiter();
 
     const time = new Date(Date.now() + 4 * 60 * 1000); // 4 minutos
     setIsDisabled(true);
